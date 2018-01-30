@@ -144,5 +144,12 @@ $ gem install ansible-role
 $ ansible-role docgen
 ```
 
+
+## TODO:
+
+* Use handlers to stop the services having to restart them multiple times
+* Make the tests check the file contents
+
+
 ## License
 Copyright (c) Nathan Dench under the MIT license.
