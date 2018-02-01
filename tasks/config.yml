@@ -6,8 +6,6 @@
     owner: "{{ item.value.owner|default(omit) }}"
     group: "{{ item.value.owner|default(omit) }}"
     state: touch
-  register: environment_file_result
-  changed_when: environment_file_result.diff.before.state != "file"
   with_dict: "{{ environment_files }}"
 
 - name: Remove previous system environment values
