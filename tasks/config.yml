@@ -48,9 +48,8 @@
 
 - name: Restart services
   service: 
-    name: "{{ environment_files[item.1].service }}"
+    name: "{{ item.service }}"
     state: restarted
-  with_subelements:
+  with_items:
     - "{{ environment_config }}"
-    - files
-  when: environment_files[item.1].service is defined
+  when: item.service is defined
